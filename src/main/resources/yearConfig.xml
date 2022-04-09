@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="convertYearToMonth" class="com.bsuir.spring.ConvertYearToMonths">
+        <constructor-arg type="java.lang.Integer" value="5"></constructor-arg>
+    </bean>
+    <bean id="convertYearToWeek" class="com.bsuir.spring.ConvertYearToWeek">
+        <constructor-arg type="java.lang.Integer" value="2020"></constructor-arg>
+    </bean>
+    <bean id="convertYearToDays" class="com.bsuir.spring.ConvertYearToDays">
+        <constructor-arg type="java.lang.Integer" value="2020"></constructor-arg>
+    </bean>
+    <bean id="convertYearsToHours" class="com.bsuir.spring.ConvertYearToHours">
+        <constructor-arg type="java.lang.Integer" value="5"></constructor-arg>
+    </bean>
+    <bean id="convertYearsToSeconds" class="com.bsuir.spring.ConvertYearsToSeconds">
+        <constructor-arg type="java.lang.Integer" value="5"></constructor-arg>
+    </bean>
+
+
+    <bean id="converterService" class="com.bsuir.spring.services.ConverterService">
+        <property name="yearConverter" ref="convertYearToMonth"></property>
+    </bean>
+    <bean id="converterService2" class="com.bsuir.spring.services.ConverterService">
+        <property name="yearConverter" ref="convertYearToWeek"></property>
+    </bean>
+    <bean id="converterService3" class="com.bsuir.spring.services.ConverterService">
+        <property name="yearConverter" ref="convertYearToDays"></property>
+    </bean>
+    <bean id="convertService4" class="com.bsuir.spring.services.ConverterService">
+        <property name="yearConverter" ref="convertYearsToHours"></property>
+    </bean>
+    <bean id="convertService5" class="com.bsuir.spring.services.ConverterService">
+        <property name="yearConverter" ref="convertYearsToSeconds"></property>
+    </bean>
+</beans>
